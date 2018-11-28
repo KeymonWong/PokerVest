@@ -16,12 +16,12 @@
 //极光推送
 #import <JPUSHService.h>
 
+#define kJPushAppKey @"e8092eec4bb17e431763439c"
+
 #ifdef DEBUG
     #define kIsProduction NO
-    #define kJPushAppKey @""
 #else
     #define kIsProduction YES
-    #define kJPushAppKey @""
 #endif
 
 @interface VDPushModule ()<JPUSHRegisterDelegate>
@@ -40,7 +40,10 @@
     JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
     entity.types = JPAuthorizationOptionAlert|JPAuthorizationOptionBadge|JPAuthorizationOptionSound;
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-        
+        UIUserNotificationType types = (UIUserNotificationTypeAlert | UIUserNotificationTypeSound | UIUserNotificationTypeBadge);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
     }
     
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];

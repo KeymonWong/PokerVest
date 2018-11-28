@@ -416,7 +416,9 @@ static const NSInteger defaultCardBack = -6;
 - (void)upButtonTapped
 {
     self.moveNumber++;
+    @weakify(self);
     [self.manager performMoveInDirection:MoveDirectionUp completionBlock:^(BOOL changed) {
+        @strongify(self);
         if (changed)
             [self followUp];
     }];
@@ -424,21 +426,27 @@ static const NSInteger defaultCardBack = -6;
 
 - (void)downButtonTapped {
     self.moveNumber++;
+    @weakify(self);
     [self.manager performMoveInDirection:MoveDirectionDown completionBlock:^(BOOL changed) {
+        @strongify(self);
         if (changed) [self followUp];
     }];
 }
 
 - (void)leftButtonTapped {
     self.moveNumber++;
+    @weakify(self);
     [self.manager performMoveInDirection:MoveDirectionLeft completionBlock:^(BOOL changed) {
+        @strongify(self);
         if (changed) [self followUp];
     }];
 }
 
 - (void)rightButtonTapped {
     self.moveNumber++;
+    @weakify(self);
     [self.manager performMoveInDirection:MoveDirectionRight completionBlock:^(BOOL changed) {
+        @strongify(self);
         if (changed) [self followUp];
     }];
 }

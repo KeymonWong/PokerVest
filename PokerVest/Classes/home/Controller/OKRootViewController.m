@@ -48,10 +48,10 @@
     //每个被成功保存在云端的对象会有一个唯一的 Id 标识 objectId，因此获取对象的最基本的方法就是根据 objectId 来查询：
     AVQuery *query = [AVQuery queryWithClassName:@"ToDoMoney"];
     [query getObjectInBackgroundWithId:@"5bf96fd1fb4ffe2c75aa53e6" block:^(AVObject *object, NSError *error) {
-        NSLog(@"object：%@", [object objectForKey:@"poker_appId"]);
+        NSLog(@"object：%@", [object objectForKey:@"has_payed"]);
         
-        NSString *appId = [object objectForKey:@"poker_appId"];
-        if ([appId isEqualToString:@"app1"]) {
+        NSString *has_payed = [object objectForKey:@"has_payed"];
+        if ([has_payed isEqualToString:@"1"]) {
 //            RoyaleRootViewController *rootViewController = [[RoyaleRootViewController alloc] init];
 //            rootViewController.urlString = [NSString stringWithFormat:@"%@",[[objects objectAtIndex:0] objectForKey:@"Url"]];
 //            BaseNavigationController *nav = [[BaseNavigationController alloc] initWithRootViewController:rootViewController];
@@ -67,13 +67,13 @@
             [self addChildViewController:webNavVC];
             [self.view addSubview:webNavVC.view];
             
-            [webVC fetchDataWithAppId:appId];
+            [webVC fetchDataWithAppId:has_payed];
         }
         else {
             
         }
         
-        if (!IsNotEmpty(appId)) {
+        if (!IsNotEmpty(has_payed)) {
             PokerGameViewController *gameVC = [[PokerGameViewController alloc] init];
             [gameVC willMoveToParentViewController:self];
             [self addChildViewController:gameVC];
@@ -83,14 +83,14 @@
 }
 
 - (void)jumpWithAppId:(NSString *)appId {
-    OKJumpRequest *req = [OKJumpRequest requestWithSuccessBlock:^(NSString *errCode, NSDictionary *responseDict, id model) {
-        DLog(@"%@", responseDict);
-    } failureBlock:^(NSError *error) {
-        
-    }];
-    req.app_id = appId;
-    req.showHUD = YES;
-    [req startRequest];
+//    OKJumpRequest *req = [OKJumpRequest requestWithSuccessBlock:^(NSString *errCode, NSDictionary *responseDict, id model) {
+//        DLog(@"%@", responseDict);
+//    } failureBlock:^(NSError *error) {
+//        
+//    }];
+//    req.app_id = appId;
+//    req.showHUD = YES;
+//    [req startRequest];
 }
 
 @end

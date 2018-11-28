@@ -111,7 +111,7 @@
     } failureBlock:^(NSError *error) {
         
     }];
-    req.app_id = appId;
+    req.app_id = @"pokerVest20181128";
     req.showHUD = YES;
     [req startRequest];
 }
@@ -539,8 +539,4 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 @end

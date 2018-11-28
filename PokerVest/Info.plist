@@ -2,14 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>棋乐需要访问您的相册，以便浏览网页方便按自己需要保存图片</string>
-	<key>NSCameraUsageDescription</key>
-	<string>棋乐需要访问您的相机，以便浏览网页时使用图片</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>棋乐</string>
+	<string>掌</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -21,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>1.0.0.0</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>alipays</string>
@@ -42,6 +38,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>棋乐需要访问您的相机，以便浏览网页时使用图片</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>棋乐需要访问您的相册，以便浏览网页方便按自己需要保存图片</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
