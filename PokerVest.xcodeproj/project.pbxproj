@@ -304,6 +304,8 @@
 		16A1752221AEDF8C00C58194 /* UITableView+ClearUselessCellSeperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+ClearUselessCellSeperator.m"; sourceTree = "<group>"; };
 		16A1752321AEDF8C00C58194 /* UIResponder+Router.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIResponder+Router.m"; sourceTree = "<group>"; };
 		16A1753F21AEF71D00C58194 /* PokerVest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PokerVest.entitlements; sourceTree = "<group>"; };
+		16A1754221B01DF200C58194 /* libjcore-ios-1.2.5.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libjcore-ios-1.2.5.a"; path = "Pods/JCore/libjcore-ios-1.2.5.a"; sourceTree = "<group>"; };
+		16A1754421B01E7600C58194 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		16FDD67121A01FAC000C049B /* PokerVest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokerVest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16FDD67421A01FAC000C049B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16FDD67521A01FAC000C049B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1296,6 +1298,8 @@
 		E21CB8AF1C527399A5DB355C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				16A1754421B01E7600C58194 /* libc++.tbd */,
+				16A1754221B01DF200C58194 /* libjcore-ios-1.2.5.a */,
 				16A174D021AAA1F300C58194 /* libsqlite3.0.tbd */,
 				16A174CC21AAA1D400C58194 /* libz.tbd */,
 				16A174CA21AAA1C800C58194 /* SystemConfiguration.framework */,
@@ -1752,8 +1756,9 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PokerVest/Classes/NativePoker2048/WeixinActivity/Resources/WeChatSDK_1.5",
+					"$(PROJECT_DIR)/Pods/JCore",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.11qdcp.handhappy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = handhappy_dev;
@@ -1781,8 +1786,9 @@
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PokerVest/Classes/NativePoker2048/WeixinActivity/Resources/WeChatSDK_1.5",
+					"$(PROJECT_DIR)/Pods/JCore",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.11qdcp.handhappy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = handhappy_dis;

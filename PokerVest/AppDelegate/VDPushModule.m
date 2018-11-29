@@ -21,7 +21,7 @@
 #ifdef DEBUG
     #define kIsProduction NO
 #else
-    #define kIsProduction YES
+    #define kIsProduction NO
 #endif
 
 @interface VDPushModule ()<JPUSHRegisterDelegate>

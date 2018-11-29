@@ -457,7 +457,7 @@
 
 - (BOOL)userHasWon
 {
-    if ([self.library count] == 0) {
+    if ([[self.library copy] count] == 0) {
         return YES;
     }
     else{

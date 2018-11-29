@@ -97,13 +97,13 @@
 
 - (void)authenticateUser
 {
-    if ([GameCenterManager isGameCenterAvailable]) {
-        self.gameCenterManager = [[GameCenterManager alloc] init];
-        //[self.gameCenterManager setDelegate:self];
-        [self.gameCenterManager authenticateLocalUser];
-    } else {
-        // THe current device does not support Game Center
-    }
+//    if ([GameCenterManager isGameCenterAvailable]) {
+//        self.gameCenterManager = [[GameCenterManager alloc] init];
+//        //[self.gameCenterManager setDelegate:self];
+//        [self.gameCenterManager authenticateLocalUser];
+//    } else {
+//        // THe current device does not support Game Center
+//    }
 }
 
 static const NSInteger dimension = 4;
@@ -288,14 +288,14 @@ static const NSInteger defaultCardBack = -6;
 //    }
 }
 
-- (NSMutableArray *)pokerRandom:(NSMutableArray*)libary
+- (NSArray *)pokerRandom:(NSMutableArray*)libary
 {
     NSInteger libraryNumber = [libary count];
     if (libraryNumber <= 0) {
         return nil;
     }
     NSInteger value = arc4random() % libraryNumber;
-    return [libary objectAtIndex:value];
+    return [[libary objectAtIndex:value] copy];
 }
 
 - (void)gameCenterView:(id)sender
@@ -342,8 +342,8 @@ static const NSInteger defaultCardBack = -6;
     
     // 重新随机放入两张牌
     for (NSInteger i = 0; i < 2; i++) {
-        NSMutableArray *poker = [self pokerRandom:self.manager.library];
-        if (!poker) {
+        NSArray *poker = [self pokerRandom:[self.manager.library copy]];
+        if (poker == nil) {
             return;
         }
         NSInteger color = [[poker objectAtIndex:0] integerValue];
